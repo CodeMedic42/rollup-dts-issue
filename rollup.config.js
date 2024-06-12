@@ -34,8 +34,6 @@ module.exports = defineConfig([
             {
                 dir: 'dist',
                 format: 'es',
-                entryFileNames: '[name].d.ts',
-                preserveModules: true,
             },
         ],
         external,
