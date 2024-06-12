@@ -1,0 +1,43 @@
+{
+    "name": "rollup-dts-issue",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist",
+        "build:js": "pnpm rollup --config rollup.config.js",
+        "build": "npm run clean && npm run build:js"
+    },
+    "exports": {
+        "./components/ComponentA": {
+            "import": "./dist/components/component-a/index.mjs",
+            "types": "./dist/components/component-a/index.d.ts"
+        },
+        "./components/ComponentB": {
+            "import": "./dist/components/component-b/index.mjs",
+            "types": "./dist/components/component-b/index.d.ts"
+        },
+        "./hooks/useHookA": {
+            "import": "./dist/hooks/use-hook-a/index.mjs",
+            "types": "./dist/hooks/use-hook-a/index.d.ts"
+        },
+        "./hooks/useHookB": {
+            "import": "./dist/hooks/use-hook-b/index.mjs",
+            "types": "./dist/hooks/use-hook-b/index.d.ts"
+        }
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/lodash": "^4.17.4",
+        "@types/react": "^18.3.2",
+        "@types/react-dom": "^18.3.0",
+        "rimraf": "latest",
+        "rollup": "^4.18.0",
+        "rollup-plugin-dts": "^6.1.1",
+        "tslib": "^2.6.3",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "react": "^16.8.5",
+        "react-dom": "^16.0.0"
+    }
+}
